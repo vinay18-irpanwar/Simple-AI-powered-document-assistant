@@ -1,124 +1,140 @@
-📄 AI-Powered PDF Research Assistant
+# 📄 AI-Powered PDF Research Assistant
 
-An intelligent Retrieval-Augmented Generation (RAG) application built with Streamlit + LangChain + Gemini + FAISS.
+An intelligent **Retrieval-Augmented Generation (RAG)** web application built using **Streamlit, LangChain, Gemini, and FAISS**.
 
-Upload any PDF document and ask questions — the AI will answer strictly based on the document content.
+Upload any PDF document and ask questions — the AI answers strictly based on the document content.
 
-🚀 Features
+---
 
-📂 Upload PDF documents
+## 🚀 Features
 
-🔎 Semantic search using FAISS
+- 📂 Upload any PDF document  
+- 🔎 Semantic search using FAISS  
+- 🧠 Context-aware answers using Gemini (LLM)  
+- 📑 Smart document chunking  
+- ⚡ Fast embeddings using sentence-transformers  
+- 🎨 Clean and interactive Streamlit UI  
+- 🔐 Secure API key management  
 
-🧠 Context-aware answers using Gemini
+---
 
-📌 Clean and interactive Streamlit UI
+## 🏗️ Tech Stack
 
-⚡ Fast embeddings using sentence-transformers
+| Component        | Technology |
+|------------------|------------|
+| Frontend         | Streamlit |
+| LLM              | Gemini (Google Generative AI) |
+| Framework        | LangChain |
+| Embeddings       | sentence-transformers |
+| Vector Database  | FAISS |
+| PDF Loader       | PyMuPDF |
 
-🔐 Secure API key management with .env
+---
 
-🏗️ Tech Stack
+## 📂 Project Structure
 
-Frontend: Streamlit
 
-LLM: Gemini (via LangChain)
-
-Embeddings: sentence-transformers
-
-Vector Store: FAISS
-
-Document Loader: PyMuPDF
-
-Framework: LangChain
-
-📂 Project Structure
 AI-PDF-Research-Assistant/
 │
 ├── app.py
 ├── requirements.txt
 ├── .env
 └── README.md
-🔐 Setup API Key
 
-Create a .env file in the project root:
 
-GOOGLE_API_KEY=your_google_api_key_here
-⚙️ Installation
-1️⃣ Create Virtual Environment
+---
+
+## 🔐 Setup Instructions
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/AI-PDF-Research-Assistant.git
+cd AI-PDF-Research-Assistant
+2️⃣ Create Virtual Environment
 python -m venv venv
-2️⃣ Activate Environment
 
-Windows (PowerShell):
+Activate the environment:
 
-.\venv\Scripts\Activate.ps1
+Windows
 
-Mac/Linux:
+.\venv\Scripts\activate
+
+Mac/Linux
 
 source venv/bin/activate
 3️⃣ Install Dependencies
 pip install -r requirements.txt
+4️⃣ Add Gemini API Key
+
+Create a .env file in the root directory:
+
+GOOGLE_API_KEY=your_api_key_here
 ▶️ Run the Application
 streamlit run app.py
 
-The app will open in your browser at:
+Then open:
 
 http://localhost:8501
-🧠 How It Works
+🧠 How It Works (RAG Pipeline)
 
 User uploads a PDF.
 
-Document is loaded using PyMuPDF.
+PDF text is extracted using PyMuPDF.
 
-Text is split into chunks.
+Text is split into smaller chunks.
 
 Chunks are converted into embeddings.
 
 FAISS stores embeddings for semantic search.
 
-Relevant chunks are retrieved.
+Relevant chunks are retrieved based on the query.
 
-Gemini generates an answer based only on retrieved context.
+Gemini generates a response using retrieved context only.
 
-🎯 Example Use Case
+📌 Example Questions
 
-Upload:
+Summarize the document
 
-Research papers
+What is the main objective?
 
-Project reports
+Explain the methodology
 
-Academic notes
+Compare advantages and disadvantages
 
-Technical documentation
-
-Ask:
-
-"What is the main objective?"
-
-"Summarize chapter 3"
-
-"Explain the methodology"
+What conclusion is drawn?
 
 📦 Requirements
-streamlit
-langchain
-langchain-community
-langchain-google-genai
-faiss-cpu
-pymupdf
-sentence-transformers
-python-dotenv
-🛠️ Future Improvements
 
-Conversational chat memory
+streamlit
+
+langchain
+
+langchain-community
+
+langchain-google-genai
+
+faiss-cpu
+
+pymupdf
+
+sentence-transformers
+
+python-dotenv
+
+⚠️ Note
+
+On first run, the embedding model (~90MB) will download automatically.
+Subsequent runs will load instantly from cache.
+
+🔮 Future Improvements
 
 Multi-PDF support
 
+Conversational chat mode
+
 Source citation display
 
-Persistent vector database
+Persistent vector storage
 
 Deployment on Streamlit Cloud
-
-
